@@ -25,7 +25,7 @@ resource "github_repository" "config_repo" {
 }
 
 resource "github_actions_environment_secret" "example_secret" {
-  repository       = data.github_repository.repo.name
+  repository       = github_repository.config_repo.name
   environment       = "example_environment"
   secret_name       = "example_secret_name"
   plaintext_value   = "example"
