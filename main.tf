@@ -23,3 +23,10 @@ resource "github_repository" "config_repo" {
   description = "My config repository for GitOps"
   visibility  = "public"
 }
+
+resource "github_actions_environment_secret" "example_secret" {
+  repository       = github_repository.repo.name
+  environment       = "example_environment"
+  secret_name       = "example_secret_name"
+  plaintext_value   = "example"
+}
