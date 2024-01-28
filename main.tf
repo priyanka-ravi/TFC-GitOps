@@ -24,9 +24,8 @@ resource "github_repository" "config_repo" {
   visibility  = "public"
 }
 
-resource "github_actions_environment_secret" "example_secret" {
+resource "github_actions_secret" "example_secret" {
   repository       = github_repository.config_repo.name
-  environment       = "example_environment"
   secret_name       = "example_secret_name"
   plaintext_value   = "example"
 }
