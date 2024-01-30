@@ -20,7 +20,7 @@ provider "github" {
 
 # Add a user to the organization
 resource "github_repository" "config_repo" {
-  name        = "config_repo"
+  name        = "my_config_repo"
   description = "My config repository for GitOps"
   visibility  = "public"
 }
