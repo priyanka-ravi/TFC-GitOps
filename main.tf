@@ -26,8 +26,8 @@ resource "github_repository" "config_repo" {
 }
 
 # Add a GitHub actions secret
-# resource "github_actions_secret" "example_secret" {
-#   repository       = github_repository.config_repo.name
-#   secret_name       = "example_secret_name"
-#   plaintext_value   = "example"
-# }
+resource "github_actions_secret" "example_secret" {
+  repository       = github_repository.config_repo.name
+  secret_name       = "example_secret_name"
+  plaintext_value   = "example"
+}
